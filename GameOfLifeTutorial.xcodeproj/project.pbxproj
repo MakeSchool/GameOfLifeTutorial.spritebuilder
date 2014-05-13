@@ -326,7 +326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git add . --all\ngit commit -m \"Automatically Committed\"\ngit push origin master";
+			shellScript = "if ! [ -n \"${MGWU_SKIP_PUSH}\" ]; then\ngit add . --all\ngit commit -m \"Automatically Committed\"\ngit push origin master\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
